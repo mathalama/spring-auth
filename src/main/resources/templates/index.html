@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>main{max-width:720px;margin:auto;padding-top:4rem}</style>
+</head>
+<body>
+<main>
+  <h2>mathalama.dev</h2>
+  <p th:if="${#httpServletRequest.userPrincipal != null}">
+    Вы вошли как <strong th:text="${#httpServletRequest.userPrincipal.name}"></strong>.
+    <form method="post" action="/api/auth/logout" style="display:inline">
+      <button type="submit">Выйти</button>
+    </form>
+  </p>
+  <p th:if="${#httpServletRequest.userPrincipal == null}">
+    <a href="/login">Войти</a> или <a href="/register">Зарегистрироваться</a>
+  </p>
+</main>
+</body>
+</html>
+
+

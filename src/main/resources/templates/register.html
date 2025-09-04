@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>main{max-width:560px;margin:auto;padding-top:4rem}</style>
+</head>
+<body>
+<main>
+  <h2>Регистрация</h2>
+  <form method="post" action="/register" th:object="${form}">
+    <label>
+      Email
+      <input th:field="*{email}" type="email" required />
+    </label>
+    <label>
+      Пароль
+      <input th:field="*{password}" type="password" minlength="6" required />
+    </label>
+    <button type="submit">Создать аккаунт</button>
+  </form>
+  <p>Уже есть аккаунт? <a href="/login">Войти</a></p>
+</main>
+</body>
+</html>
+
+
