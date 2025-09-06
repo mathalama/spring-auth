@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home</title>
-    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" th:href="@{/css/profile.css}"/>
     <style>main{max-width:720px;margin:auto;padding-top:4rem}</style>
 </head>
 <body>
 <main>
-  <h2>mathalama.dev</h2>
-    <a th:href="@{/profile}">Мой профиль</a>
+    <h2>mathalama.dev</h2>
+        Вы вошли как <p><span th:text="${username}"></span></p>
     <form method="post" action="/api/auth/logout" style="display:inline">
-      <button type="submit">Выйти</button>
+        <button type="submit">Выйти</button>
     </form>
-    <a th:href="@{/login}">Войти</a> или <a th:href="@{/register}">Зарегистрироваться</a>
 </main>
 </body>
 </html>
