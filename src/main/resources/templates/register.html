@@ -1,29 +1,46 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Register</title>
-    <link rel="stylesheet" th:href="@{/css/register.css}"/>
-    <style>main{max-width:560px;margin:auto;padding-top:4rem}</style>
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+    <link th:href='@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}' rel='stylesheet'>
 </head>
 <body>
 <main>
-  <h2>Регистрация</h2>
-  <form method="post" action="/register" th:object="${form}">
-    <label>
-      Email
-      <input th:field="*{email}" type="email" required />
-    </label>
-    <label>
-      Пароль
-      <input th:field="*{password}" type="password" minlength="6" required />
-    </label>
-    <button type="submit">Создать аккаунт</button>
-  </form>
-  <p>Уже есть аккаунт? <a href="/login">Войти</a></p>
+    <div class="wrapper">
+        <form method="post" action="/register" th:object="${form}">
+            <h1>Register</h1>
+
+            <div class="input-box">
+                <i class='bx bxs-envelope'></i>
+                <input th:field="*{email}" type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-box">
+                <i class='bx bxs-lock-alt'></i>
+                <input th:field="*{password}" type="password" name="password" placeholder="Password" minlength="6" required>
+            </div>
+
+            <div class="input-box">
+                <i class='bx bxs-lock'></i>
+                <input id="confirmPassword" type="password" placeholder="Confirm Password" minlength="6" required>
+            </div>
+
+            <div id="registerError" style="color: red; text-align: center; display: none;"></div>
+
+            <button type="submit" class="btn">Create account</button>
+
+            <div class="register-link">
+                <p>Already have an account? <a th:href="@{/login}">Login</a></p>
+            </div>
+        </form>
+    </div>
 </main>
+<script th:src="@{/js/register.js}"></script>
 </body>
 </html>
+
 
 

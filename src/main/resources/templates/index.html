@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,14 +9,15 @@
 </head>
 <body>
 <main>
-  <h2>mathalama.dev</h2>
+    <h2>mathalama.dev</h2>
     <a th:href="@{/profile}">Мой профиль</a>
     <form method="post" action="/api/auth/logout" style="display:inline">
-      <button type="submit">Выйти</button>
+        <button type="submit">Выйти</button>
     </form>
     <a th:href="@{/login}">Войти</a> или <a th:href="@{/register}">Зарегистрироваться</a>
 </main>
 </body>
 </html>
+
 
 

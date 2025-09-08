@@ -45,8 +45,9 @@ public class ViewController {
     public String profilePage(Model model, Principal principal) {
         String username = principal.getName();
         model.addAttribute("username", username);
-        return "profile"; // profile.html
+        return "profile";
     }
 }
+
 
 
