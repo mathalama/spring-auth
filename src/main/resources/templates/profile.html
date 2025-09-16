@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
+    <title>Mathalama</title>
     <link rel="stylesheet" th:href="@{/css/profile.css}"/>
-    <style>main{max-width:720px;margin:auto;padding-top:4rem}</style>
+    <link th:href='@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}' rel='stylesheet'>
 </head>
 <body>
 <main>
-    <h2>mathalama.dev</h2>
-        Вы вошли как <p><span th:text="${username}"></span></p>
-    <form method="post" action="/api/auth/logout" style="display:inline">
-        <button type="submit">Выйти</button>
-    </form>
-</main>
+    <div>
+        <h1>mathalama.dev</h1>
+            <p>Welcome!</p>
+            <p><span th:text="${username}"></span></p>
+        <form method="post" action="/api/auth/logout" style="display:inline">
+            <button type="submit">Выйти</button>
+        </form>
+    </div>
+    </main>
 </body>
 </html>
 
