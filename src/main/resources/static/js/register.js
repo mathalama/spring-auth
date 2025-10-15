@@ -25,13 +25,13 @@
 
     if (pwd.length < 6) {
       e.preventDefault();
-      showError('Пароль должен быть не менее 6 символов');
+      showError('The password must be at least 6 characters long.');
       return;
     }
 
     if (pwd !== cpwd) {
       e.preventDefault();
-      showError('Пароли не совпадают');
+      showError('Passwords don\'t match');
       return;
     }
   });
